@@ -11,19 +11,47 @@ body{
     box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 100px auto;
 }
 .box{
-    width: 80%;
+    width: 25%;
     height: 60%;
+  
     background-color: #ffffff;
     border: 2px solid #6f9da106;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.clock , .setClock{
+    font-size: 3em;
+height: 22%;
+width: 99%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #333333;
+    background-color: rgb(144, 195, 208);
+   
+
+}
+
+.currentTime, .setTime{
+    font-size: ;
+    color: #114b0c;
+   
+    border: 6px solid #00000006;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    width: 50%;
+    height: 15%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
