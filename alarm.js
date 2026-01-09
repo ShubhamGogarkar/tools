@@ -1,34 +1,54 @@
-hourBox=document.querySelector('.hour');
-minuteBox=document.querySelector('.minute');
-secondBox=document.querySelector('.second');
-setHourBox=document.querySelector('.setHour');
-setMinuteBox=document.querySelector('.setMinute');
-setSecondBox=document.querySelector('.setSecond');
+const hourBox = document.querySelector('.hour');
+const minuteBox = document.querySelector('.minute');
+const secondBox = document.querySelector('.second');
 
+const setHourBox = document.querySelector('.setHour');
+const setMinuteBox = document.querySelector('.setMinute');
+const setSecondBox = document.querySelector('.setSecond');
 
+const audio = document.querySelector('audio');
+const butt = document.querySelector('.stopbutt');
+const setButt = document.querySelector('.setAlarm');
 
-function updateClock(){
+let alarmRang = false; // 🔔 alarm flag
 
-const now = new Date();
-const hours = now.getHours();
-const minutes = now.getMinutes();
-const seconds = now.getSeconds();
-hourBox.innerText = hours;
-minuteBox.innerText = minutes;
-secondBox.innerText = seconds;
+function updateClock() {
+    const now = new Date();
 
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
 
+    // display time
+    hourBox.innerText = hours.toString().padStart(2, '0');
+    minuteBox.innerText = minutes.toString().padStart(2, '0');
+    secondBox.innerText = seconds.toString().padStart(2, '0');
 
-setSec=Number(setSecondBox.value);
-setMin=Number(setMinuteBox.value);
-setHour=Number(setHourBox.value);
+    const setHour = Number(setHourBox.value);
+    const setMin = Number(setMinuteBox.value);
+    const setSec = Number(setSecondBox.value);
 
-
-if (hours === setHour && minutes === setMin && seconds === setSec)  {
-    console.log("Alarm ringing!");}
-
-
-
+    
+ 
+    // alarm condition
+    if (
+        hours === setHour &&
+        minutes === setMin &&
+        seconds === setSec &&
+        !alarmRang
+    ) {
+        console.log("Alarm ringing!");
+        audio.play();
+        alarmRang = true;
+    }
 }
+
+// stop alarm button
+butt.addEventListener('click', function () {
+    audio.pause();
+    audio.currentTime = 0;
+    alarmRang = false; // allow next alarm
+});
+  
 
 setInterval(updateClock, 1000);
