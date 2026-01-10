@@ -39,7 +39,11 @@ function updateClock() {
     ) {
         console.log("Alarm ringing!");
         audio.play();
+<<<<<<< HEAD
         alarmRang = false; 
+=======
+        alarmRang = false;
+>>>>>>> dd8bb2335958bf25360ebb010f8ee68ec984ce8a
     }
 }
 
