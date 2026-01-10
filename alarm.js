@@ -39,7 +39,7 @@ function updateClock() {
     ) {
         console.log("Alarm ringing!");
         audio.play();
-        alarmRang = true;
+        alarmRang = false; 
     }
 }
 
