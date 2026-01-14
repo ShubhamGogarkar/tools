@@ -5,7 +5,7 @@ nav{
     justify-content: center;
     align-items: center;
     padding: 15px;
-    font-size: 2em;
+    font-size: 2vmin;
     font-weight: bold;
     height: 2vh;
     width: 98vw;
@@ -66,4 +66,5 @@ img{
     width: 200px;
     border-radius: 10px;
     margin-bottom: 15px;
+
 }
